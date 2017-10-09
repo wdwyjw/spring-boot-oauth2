@@ -1,4 +1,4 @@
-package com.rd.security;
+package com.ihr.oauth.security;
 
 import org.springframework.security.core.AuthenticationException;
 

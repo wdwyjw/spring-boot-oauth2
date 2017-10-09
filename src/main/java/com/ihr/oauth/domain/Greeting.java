@@ -1,4 +1,4 @@
-package com.rd.domain;
+package com.ihr.oauth.domain;
 
 public class Greeting {
 

@@ -1,8 +1,8 @@
-package com.rd.security;
+package com.ihr.oauth.security;
 
-import com.rd.domain.Authority;
-import com.rd.domain.User;
-import com.rd.repository.UserRepository;
+import com.ihr.oauth.repository.UserRepository;
+import com.ihr.oauth.domain.Authority;
+import com.ihr.oauth.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

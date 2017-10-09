@@ -1,8 +1,8 @@
-package com.rd.config;
+package com.ihr.oauth.config;
 
-import com.rd.security.Authorities;
-import com.rd.security.CustomAuthenticationEntryPoint;
-import com.rd.security.CustomLogoutSuccessHandler;
+import com.ihr.oauth.security.CustomAuthenticationEntryPoint;
+import com.ihr.oauth.security.Authorities;
+import com.ihr.oauth.security.CustomLogoutSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
@@ -19,6 +19,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -39,6 +40,11 @@ public class OAuth2Configuration {
         private CustomLogoutSuccessHandler customLogoutSuccessHandler;
 
         @Override
+        public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+
+        }
+
+        @Override
         public void configure(HttpSecurity http) throws Exception {
 
             http
@@ -54,6 +60,7 @@ public class OAuth2Configuration {
                     .disable()
                     .headers()
                     .frameOptions().disable()
+                    .and()
                     .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                     .and()

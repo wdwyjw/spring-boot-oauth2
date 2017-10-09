@@ -1,4 +1,4 @@
-package com.rd.security;
+package com.ihr.oauth.security;
 
 public enum Authorities {
 
